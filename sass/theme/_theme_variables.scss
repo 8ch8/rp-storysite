@@ -1,0 +1,21 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+$primary: #383838;
+$primary-300: #707070;
+$primary-400: #8d8d8d;
+$primary-600: #f0f0f0;
+$secondary: #ea6764;
+$tertiary: #ffc536;
+$quaternary: #4b9dd0;
+
+@mixin easeOut {
+	transition: all 0.5s ease-out;
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: 18px;
+	line-height: 1.25;
+}

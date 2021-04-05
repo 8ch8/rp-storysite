@@ -1,0 +1,158 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	height: 900px;
+	background: $primary;
+	color: white;
+	font-family: "Poppins", sans-serif;
+	.wrapper-container {
+		@include media-breakpoint-down(md) {
+			max-width: 720px;
+		}
+	}
+
+	.top-row {
+		display: flex;
+		@include media-breakpoint-down(md) {
+			display: flex;
+			flex-wrap: wrap;
+			padding-top: 100px;
+			padding-bottom: 200px;
+		}
+		.left-col {
+			width: 60%;
+			padding-right: 120px;
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				padding: 80px;
+			}
+
+			.explore-title {
+				font-size: 30px;
+				font-weight: 300;
+				@include media-breakpoint-down(md) {
+					font-size: 30px;
+					font-weight: 400;
+					padding-top: 250px;
+					text-align: center;
+				}
+			}
+
+			.footer-menu {
+				padding-top: 35px;
+				.nav-list {
+					list-style-type: none;
+					justify-content: space-between;
+					display: flex;
+					flex-wrap: wrap;
+					padding-left: 0;
+
+					.nav-link {
+						color: white;
+						font-size: 16px;
+						width: 150px;
+						border-bottom: 3px solid $secondary;
+						padding-left: 0;
+					}
+				}
+			}
+
+			.contact-wrapper {
+				display: flex;
+				justify-content: space-between;
+			}
+			.contact-title {
+				font-size: 30px;
+				padding-top: 70px;
+				padding-bottom: 25px;
+				@include media-breakpoint-down(md) {
+					font-size: 30px;
+					font-weight: 400;
+					text-align: center;
+				}
+			}
+
+			.email-title {
+				font-size: 16px;
+			}
+
+			.email {
+				font-size: 18px;
+			}
+
+			.phone-title {
+				font-size: 16px;
+			}
+
+			.phone {
+				font-size: 18px;
+			}
+		}
+
+		.right-col {
+			width: 40%;
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+
+			.storyteller-text {
+				font-size: 30px;
+				@include media-breakpoint-down(md) {
+					text-align: center;
+					padding-bottom: 40px;
+				}
+			}
+
+			.storyteller-text2 {
+				font-size: 18px;
+				@include media-breakpoint-down(md) {
+					text-align: center;
+					padding-bottom: 40px;
+				}
+			}
+
+			.wpcf7-form-control {
+				height: 53px;
+			}
+			#form-submit {
+				color: white;
+				background-color: $secondary;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.bottom-row {
+		display: flex;
+		padding-top: 20px;
+		border-top: 3px solid $primary-400;
+		margin-top: 135px;
+		justify-content: space-between;
+		@include media-breakpoint-down(md) {
+			flex-wrap: wrap;
+			text-align: center;
+			justify-content: center;
+			margin-top: -135px;
+			padding: 0px;
+		}
+
+		.footer-text {
+			font-size: 16px;
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+
+		.social-icons {
+			display: flex;
+			justify-content: flex-end;
+			font-size: 24px;
+			.fa {
+				color: $secondary;
+				padding-left: 0.4em;
+				padding-right: 0.4em;
+			}
+		}
+	}
+}

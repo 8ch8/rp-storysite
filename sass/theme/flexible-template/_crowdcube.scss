@@ -1,0 +1,111 @@
+section.crowd-cube {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	font-family: "Poppins", sans-serif;
+	height: 1017px;
+
+	.crowdcube-container {
+		display: flex;
+	}
+	.crowd-box {
+		background: white;
+		justify-content: space-between;
+		align-items: center;
+		width: 755px;
+		margin-top: 250px;
+		.top-box2 {
+			justify-content: space-between;
+			align-items: center;
+			padding-left: 46px;
+			padding-bottom: 50px;
+			.crowdcube-title {
+				color: $primary-300;
+				word-spacing: 0.2em;
+				font-size: 17px;
+				font-weight: 500;
+				padding-top: 43px;
+			}
+			.crowdcube-text1 {
+				color: $primary;
+				font-size: 42px;
+				font-weight: 400;
+				padding-top: 36px;
+				line-height: 1em;
+			}
+			.crowdcube-text2 {
+				color: $primary;
+				font-size: 18px;
+				padding-top: 28px;
+			}
+		}
+		.result-box {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: $primary-600;
+			padding-right: 46px;
+			padding-left: 46px;
+			padding-bottom: 32px;
+			padding-top: 30px;
+			.result-title {
+				color: $primary;
+				font-size: 15px;
+				font-weight: 400;
+				padding-right: 37px;
+				padding-bottom: 80px;
+				border-right: 2px solid $primary-400;
+			}
+			.value3 {
+				text-align: center;
+
+				.value2-title1 {
+					color: $quaternary;
+					font-size: 40px;
+					font-weight: 900;
+					border-right: 2px solid $primary-400;
+					padding-right: 30px;
+				}
+				.value2-text1 {
+					color: $primary;
+					font-size: 14px;
+					max-width: 220px;
+					padding-right: 30px;
+					border-right: 2px solid $primary-400;
+				}
+			}
+			.value4 {
+				text-align: center;
+
+				.value2-title2 {
+					color: $quaternary;
+					font-size: 40px;
+					font-weight: 900;
+					border-right: 2px solid $primary-400;
+					padding-right: 30px;
+				}
+				.value2-text2 {
+					color: $primary;
+					font-size: 14px;
+					max-width: 225px;
+					padding-right: 30px;
+					border-right: 2px solid $primary-400;
+				}
+			}
+		}
+
+		.bottom-box2 {
+			.read-more2 {
+				display: flex;
+				align-items: center;
+				text-align: center;
+				height: 70px;
+				padding: 0em 20em;
+				background-color: $primary;
+				color: white;
+				font-size: 16px;
+				text-decoration: none;
+			}
+		}
+	}
+}
