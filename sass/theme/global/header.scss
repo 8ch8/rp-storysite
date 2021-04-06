@@ -2,15 +2,28 @@
 	height: 95px;
 	display: flex;
 	align-items: center;
+
 	.header-container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 50px;
+		@include media-breakpoint-down(sm) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
 	}
 	.rooster-logo {
 		padding: 5px;
 		width: 150px;
+		@include media-breakpoint-down(sm) {
+			max-width: 100%;
+			height: auto;
+		}
 	}
 
 	.icon-bar {
@@ -19,6 +32,9 @@
 		text-align: right;
 		flex: 1;
 		padding-right: 25px;
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
 	}
 
 	.navbar {
@@ -35,6 +51,12 @@
 			background: $primary;
 			margin-bottom: 6px;
 			width: 1.2em;
+			@include media-breakpoint-down(sm) {
+				height: 3px;
+				border-radius: 3px;
+				margin-bottom: 4px;
+				width: 0.8em;
+			}
 		}
 		.bar2 {
 			height: 4px;
@@ -42,6 +64,12 @@
 			background: $primary;
 			margin-bottom: 6px;
 			width: 1.8em;
+			@include media-breakpoint-down(sm) {
+				height: 3px;
+				border-radius: 3px;
+				margin-bottom: 4px;
+				width: 1.2em;
+			}
 		}
 		.bar3 {
 			height: 4px;
@@ -49,6 +77,13 @@
 			background: $primary;
 			width: 1.2em;
 			float: right;
+			@include media-breakpoint-down(sm) {
+				height: 3px;
+				border-radius: 3px;
+				margin-bottom: 4px;
+				width: 0.8em;
+				float: right;
+			}
 		}
 	}
 }

@@ -10,6 +10,10 @@
 		@include media-breakpoint-down(md) {
 			margin-top: 300px;
 		}
+		@include media-breakpoint-down(sm) {
+			justify-content: flex-start;
+			display: flex;
+		}
 	}
 	.story-box {
 		background: white;
@@ -17,17 +21,26 @@
 		align-items: center;
 		width: 755px;
 		margin-top: 250px;
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			padding: 0 20px;
+		}
 		.top-box {
 			justify-content: space-between;
 			align-items: center;
-			padding-left: 46px;
-			padding-bottom: 50px;
+			padding-left: 20px;
+			@include media-breakpoint-down(sm) {
+				min-height: 400px;
+			}
 			.story-title {
 				color: $primary-300;
 				word-spacing: 0.2em;
 				font-size: 17px;
 				font-weight: 500;
 				padding-top: 43px;
+				@include media-breakpoint-down(sm) {
+					font-size: 14px;
+				}
 			}
 			.story-text1 {
 				color: $primary;
@@ -35,11 +48,17 @@
 				font-weight: 400;
 				padding-top: 36px;
 				line-height: 1em;
+				@include media-breakpoint-down(sm) {
+					font-size: 24px;
+				}
 			}
 			.story-text2 {
 				color: $primary;
 				font-size: 18px;
 				padding-top: 28px;
+				@include media-breakpoint-down(sm) {
+					padding-bottom: 0px;
+				}
 			}
 		}
 		.key-box {
@@ -51,6 +70,10 @@
 			padding-left: 46px;
 			padding-bottom: 32px;
 			padding-top: 30px;
+			@include media-breakpoint-down(sm) {
+				flex-wrap: wrap;
+				padding-top: 0px;
+			}
 			.key-title {
 				color: $primary;
 				font-size: 15px;
@@ -58,16 +81,32 @@
 				padding-right: 37px;
 				padding-bottom: 80px;
 				border-right: 2px solid $primary-400;
+
+				@include media-breakpoint-down(sm) {
+					font-size: 16px;
+					font-weight: 700;
+					border-right: none;
+					padding-bottom: 20px;
+				}
 			}
 			.value1 {
 				text-align: center;
-
+				@include media-breakpoint-down(sm) {
+					width: 50%;
+					text-align: center;
+					align-items: center;
+				}
 				.value-title1 {
 					color: $tertiary;
 					font-size: 40px;
 					font-weight: 900;
 					border-right: 2px solid $primary-400;
 					padding-right: 30px;
+					@include media-breakpoint-down(sm) {
+						line-height: 1;
+						font-weight: 800;
+						border-right: none;
+					}
 				}
 				.value-text1 {
 					color: $primary;
@@ -75,10 +114,19 @@
 					max-width: 220px;
 					padding-right: 30px;
 					border-right: 2px solid $primary-400;
+					@include media-breakpoint-down(sm) {
+						display: flex;
+						border-right: none;
+					}
 				}
 			}
 			.value2 {
 				text-align: center;
+				@include media-breakpoint-down(sm) {
+					width: 50%;
+					text-align: center;
+					align-items: center;
+				}
 
 				.value-title2 {
 					color: $tertiary;
@@ -86,6 +134,12 @@
 					font-weight: 900;
 					border-right: 2px solid $primary-400;
 					padding-right: 30px;
+					@include media-breakpoint-down(sm) {
+						border-right: none;
+						line-height: 1;
+						font-weight: 800;
+						padding-left: 20px;
+					}
 				}
 				.value-text2 {
 					color: $primary;
@@ -93,11 +147,23 @@
 					max-width: 225px;
 					padding-right: 30px;
 					border-right: 2px solid $primary-400;
+					@include media-breakpoint-down(sm) {
+						width: 50%;
+						display: flex;
+						border-right: none;
+						padding-left: 20px;
+					}
 				}
 			}
 		}
 
 		.bottom-box {
+			@include media-breakpoint-down(sm) {
+				display: inline-block;
+				height: 55px;
+				margin-bottom: 15px;
+				margin-left: -20px;
+			}
 			.read-more {
 				display: flex;
 				align-items: center;
@@ -108,6 +174,10 @@
 				color: white;
 				font-size: 16px;
 				text-decoration: none;
+				@include media-breakpoint-down(sm) {
+					display: flex;
+					padding: 0 151px;
+				}
 			}
 		}
 	}
