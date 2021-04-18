@@ -35,23 +35,33 @@
 				</div>
 				<div class="footer-menu">
 					<nav class="nav-container">
-						<ul class="nav-list">
-							<li class="nav-list-home"><a href="http://www.rp-storysite.dev.cc/" class="nav-link">HOME</a></li>
-							<li class="nav-list-thinking"><a href="http://www.rp-storysite.dev.cc/" class="nav-link">OUR STORY</a></li>
-							<li class="nav-list-story"><a href="http://www.rp-storysite.dev.cc/" class="nav-link">WORK</a></li>
-							<li class="nav-list-work"><a href="http://www.rp-storysite.dev.cc/" class="nav-link">THINKING</a></li>
-							<li class="nav-list-download"><a href="http://www.rp-storysite.dev.cc/" class="nav-link">DOWNLOAD</a></li>
-							<li class="nav-list-contact"><a href="http://www.rp-storysite.dev.cc/" class="nav-link">CONTACT US</a></li>
-						</ul>
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'primary',
+									'container_class' => '',
+									'container_id'    => 'footer-menu',
+									'menu_class'      => '',
+									'fallback_cb'     => '',
+									'menu_id'         => 'main-menu',
+									'depth'           => 2,
+									'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+								)
+							);
+						?> 
 					</nav>
 				</div>
 				<!-- footer-menu end -->
-				<div class="contact-title">
-					<?php if ($contact_title):?>
-					<?php echo ($contact_title);?>
-					<?php endif;?>
-				</div>
-				<div class="contact-wrapper">
+
+				
+					<div class="contact-title">
+						<?php if ($contact_title):?>
+						<?php echo ($contact_title);?>
+						<?php endif;?>
+					</div>
+
+					<div class="contact-wrapper">
+
 					<div class="email-wrapper">
 						<div class="email-title">
 							<span>EMAIL</span>
@@ -74,6 +84,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="right-col">
 				<div class="storyteller-text">
 					<?php if ($storyteller_text):?>
@@ -91,11 +102,35 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="bottom-row">
 			<div class="footer-text">
-				<?php if ($footer_text):?>
-				<?php echo ($footer_text);?>
-				<?php endif;?>
+
+				<div class="left-col">
+					<?php if ($footer_text):?>
+						<?php echo ($footer_text);?>
+					<?php endif;?>
+				</div>
+
+				<div class="separator">
+					 |
+				</div>
+
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'secondary',
+							'container_class' => '',
+							'container_id'    => 'footer-link',
+							'menu_class'      => '',
+							'fallback_cb'     => '',
+							'menu_id'         => 'footer-menu',
+							'depth'           => 2,
+							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+						)
+					);
+				?>
+
 			</div>
 			<div class="social-icons">
 				<a href="#" class="button"><i class="fa fa-facebook-official" aria-hidden="true"></i>

@@ -1,79 +1,58 @@
 <?php
+$post_id = get_sub_field ('post_object');
+$post_title = get_field ('post_title', $post_id);
+$post_type = get_field ('post_type', $post_id);
+$client = get_field ('client', $post_id);
+$post_color = get_field ('post_color', $post_id);
+$post_image = get_field ('post_image', $post_id);
+$post_text = get_field ('post_text', $post_id);
 
-$background1 = get_sub_field ('background1');
-$story_title = get_sub_field ('story_title');
-$story_text1 = get_sub_field ('story_text1');
-$story_text2 = get_sub_field ('story_text2');
-$key_title = get_sub_field ('key_title');
-$value_title1 = get_sub_field ('value_title1');
-$value_text1 = get_sub_field ('value_text1');
-$value_title2 = get_sub_field ('value_title2');
-$value_text2 = get_sub_field ('value_text2');
-$link = get_sub_field ('read_more');
-$tertiary_color = get_sub_field ('tertiary_color');
-$primary_color = get_sub_field ('primary_color');
-
+$link = get_field ('read_more', $post_id);
+$key_title = get_field ('key_title', $post_id);
 ?>
 
-<section style="background-image:url('<?php echo $background1 ?>')"class="case-story">
+<section style="background-image:url('<?php echo $post_image ?>')"class="case-story">
   <div class="container story-container">
     <div class="story-box">
     
       <div class="top-box">
         <div class="story-title">
-          <?php if($story_title):?>
-            <?php echo $story_title;?>
-          <?php endif;?>
+            <?php echo $post_type;?> | <?php echo $client;?>
         </div>
-
+          
         <div class="story-text1">
-          <?php if($story_text1):?>
-            <?php echo $story_text1;?>
-          <?php endif;?>
+            <?php echo $post_title;?>
         </div>
 
         <div class="story-text2">
-          <?php if($story_text2):?>
-            <?php echo $story_text2;?>
+            <?php echo $post_text;?>
+        </div>
+
+        <div class="key-box">
+          <div class="key-title">
+              <?php echo $key_title ?>
+          </div>
+          
+          <?php if( have_rows('key_results', $post_id)):?>
+            <?php while( have_rows('key_results', $post_id)): the_row();?>
+              <?php
+                $value = get_sub_field('value');
+                $description = get_sub_field('description');
+              ?>
+              <div class="result-wrapper">
+                <div class="value <?php echo $post_color;?>">
+                  <?php echo $value;?>
+                </div>
+                <div class="description">
+                  <?php echo $description;?>
+                </div>
+              </div>
+            <?php endwhile;?>
           <?php endif;?>
         </div>
       </div>
-
-      <div class="key-box">
-        <div class="key-title">
-          <?php if($key_title):?>
-            <?php echo $key_title;?>
-          <?php endif;?>
-        </div>
-        
-        <div class="value1">
-          <div class="value-title1">
-            <?php if($value_title1):?>
-              <?php echo $value_title1;?>
-            <?php endif;?>
-          </div>
-          
-          <div class="value-text1">
-            <?php if($value_text1):?>
-              <?php echo $value_text1;?>
-            <?php endif;?>
-          </div>
-        </div>
-        <div class="value2">
-          <div class="value-title2">
-            <?php if($value_title2):?>
-              <?php echo $value_title2;?>
-            <?php endif;?>
-          </div>
-          
-          <div class="value-text2">
-            <?php if($value_text2):?>
-              <?php echo $value_text2;?>
-            <?php endif;?>
-          </div>
-        </div>
-      </div>
-
+      
+      
       <div class="bottom-box">
         <?php if($link):?>
           <?php 
@@ -89,6 +68,3 @@ $primary_color = get_sub_field ('primary_color');
     </div>
   </div>
 </section>
-          
-
-          
